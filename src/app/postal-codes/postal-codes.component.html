@@ -1,0 +1,29 @@
+<div class="row">
+  <h1></h1>
+</div>
+<div class="row">
+  <input class="search" [(ngModel)]="searchText" type="text" placeholder="Search..">
+  <div class="col-lg-4 postal-list">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>postal_code</th>
+          <th>latitude</th>
+          <th>longitide</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let postCode of postalCodes | filter : searchText">
+          <td>{{ postCode.id }}</td>
+          <td>{{ postCode.postal_code }}</td>
+          <td>{{ postCode.latitude }}</td>
+          <td>{{ postCode.longitide }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-lg-8">
+    <app-google-maps [postalCodes]="postalCodes | filter : searchText"></app-google-maps>
+  </div>
+</div>
