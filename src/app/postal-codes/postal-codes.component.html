@@ -1,8 +1,17 @@
-<div class="row">
-  <h1></h1>
+<div class="row center">
+  <input
+    class="search-input"
+    [(ngModel)]="searchText"
+    type="text"
+    placeholder="Search..">
+  <fa-icon
+    class="search-cancel"
+    size="2x"
+    (click)="searchText=''"
+    [icon]="faIcon">
+  </fa-icon>
 </div>
 <div class="row">
-  <input class="search" [(ngModel)]="searchText" type="text" placeholder="Search..">
   <div class="col-lg-4 postal-list">
     <table class="table table-hover">
       <thead>
@@ -14,7 +23,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let postCode of postalCodes | filter : searchText">
+        <tr *ngFor="let postCode of postalCodes | filter : searchText"
+          (click)="searchText=postCode.postal_code">
           <td>{{ postCode.id }}</td>
           <td>{{ postCode.postal_code }}</td>
           <td>{{ postCode.latitude }}</td>
@@ -24,6 +34,7 @@
     </table>
   </div>
   <div class="col-lg-8">
-    <app-google-maps [postalCodes]="postalCodes | filter : searchText"></app-google-maps>
+    <app-google-maps [postalCodes]="postalCodes | filter : searchText">
+    </app-google-maps>
   </div>
 </div>

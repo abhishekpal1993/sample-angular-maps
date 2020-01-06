@@ -3,8 +3,17 @@
     overflow-y: auto;
 }
 
-.search {
-    padding: 5px;
-    margin: 15px;
-    width: 100%
+.center {
+  text-align: center;
+  border: 3px solid grey;
+  padding: 15px;
+}
+
+.search-input {
+    width: 95%
+}
+
+.search-cancel {
+    padding: 2px;
+    width: 5%
 }

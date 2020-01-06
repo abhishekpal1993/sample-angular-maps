@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+
 import { PostalCode } from '../shared/models/postal-code.model';
 import { PostalCodeService } from '../core/services/postal-code.service';
 
@@ -8,6 +10,7 @@ import { PostalCodeService } from '../core/services/postal-code.service';
   styleUrls: ['./postal-codes.component.scss']
 })
 export class PostalCodesComponent implements OnInit {
+  faIcon = faWindowClose;
   searchText: string;
   postalCodes: PostalCode[];
 

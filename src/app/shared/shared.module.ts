@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -9,6 +10,7 @@ import { FormsModule } from '@angular/forms';
   exports: [
     FilterPipe,
     FormsModule,
+    FontAwesomeModule,
   ]
 })
 export class SharedModule { }
